@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>魔方3d相册</title>
+	<style>
+		@-webkit-keyframes anim{
+			to{transform:rotateX(360deg)rotateY(360deg);}
+		}
+		img{
+		  width: 200px;
+		  height: 200px;
+		}
+		.box{
+		  perspective: 2000px;
+		  transform-style: preserve-3d;
+		  transform:rotateX(0deg) rotateY(0deg);
+		}
+		.mofang_box{
+		  width: 200px;
+		  height: 200px;
+		  margin: 100px auto;
+		  position: relative;
+		  transform-style: preserve-3d;
+		  transform:rotateX(0deg)rotateY(0deg);
+		  -webkit-animation:anim 5s infinite linear;
+		}
+		.mofang_box>div{
+		  width: 200px;
+		  height: 200px;
+		  text-align: center;
+		  line-height: 200px;
+		  position: absolute;
+		}
+
+		.left{
+		  transform:rotateY(90deg)translateZ(-100px);
+	
+		}
+		.right{
+		  transform:rotateY(90deg)translateZ(100px);
+		}
+		.top{
+		  transform:rotateX(90deg)translateZ(100px)rotateZ(360deg);
+		}
+		.buttom{
+		  transform:rotateX(90deg)translateZ(-100px)rotateZ(180deg);
+		}
+		.hou{
+		  transform:rotateX(0deg)translateZ(-100px)rotateZ(180deg);
+		}
+		.qian{
+		  transform:rotateX(0deg)translateZ(100px);
+		}
+	</style>
+</head>
+<body>
+<h3 style="text-align:center">魔方相册</h3>
+  <div class="box">
+    <div class="mofang_box"id="mofang_box">
+      <div class=" hou"><img src="imags/2.jpg"></div>
+      <div class=" left"><img src="imags/3.jpg"></div>
+      <div class=" right"><img src="imags/4.jpg"></div>
+      <div class=" top"><img src="imags/5.jpg"></div>
+      <div class=" buttom"><img src="imags/6.jpg"></div>
+      <div class=" qian"><img src="imags/1.jpg"></div>
+    </div>
+  </div>
+</body>
+</html>

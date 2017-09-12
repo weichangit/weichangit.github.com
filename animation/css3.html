@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.ball-box{
+			width:200px;
+			height: 200px;
+			position: absolute;
+			top: 20%;
+			left: 30%;
+			perspective:3000px;
+			transform:rotateZ(-30deg);
+
+		}
+		.ball{
+			transform-style:preserve-3d;
+			-webkit-animation:rotate3d 30s infinite linear;
+
+		}
+		.ball:after{
+			content: '';
+			width: 1px;
+			height: 400px;
+			background-color: #ff0048;
+			display: block;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			transform:translateY(-90px) translateX(100px);
+		}
+		.ball>div{
+			width:200px;
+			height: 200px;
+			position: absolute;
+			border-radius: 100%;
+			border: 1px solid #0042ff;
+		}
+		.ball .line-1{transform:rotateY(0);}
+		.ball .line-2{transform:rotateY(30deg);}
+		.ball .line-3{transform:rotateY(60deg);}
+		.ball .line-4{transform:rotateY(90deg);}
+		.ball .line-5{transform:rotateY(120deg);}
+		@-webkit-keyframes rotate3d{
+			0%{transform:rotateZ(-30deg) rotateY(360deg);};
+			100%{transform:rotateZ(30deg) rotateY(0deg);}
+		}
+	</style>
+</head>
+<body>
+	<h3 style="text-align:center">地球仪</h3>
+	<div class="ball-box">
+		<div class="ball">
+			<div class="line-1"></div>
+			<div class="line-2"></div>
+			<div class="line-3"></div>
+			<div class="line-4"></div>
+			<div class="line-5"></div>
+		</div>
+	</div>
+</body>
+</html>
